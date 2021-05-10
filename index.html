@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <title>Ejercicio</title>
+
+    <!-- meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Importar Mainstyle -->
+    <link rel="stylesheet" href="css/mainstyle.css">
+
+  </head>
+  <body>
+
+    <!-- Empieza el header -->
+    <header>
+        <div class="container">
+            <!-- Boton para abrir el sidebar -->
+            <a class="btnMenu" onclick="desplegarSidebar()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <!-- Fin -->
+
+            <h3>
+                Carlos A. Martínez
+            </h3>
+
+        </div>
+
+    </header>
+    <!-- Termina el header -->
+
+    <!-- Empieza sidebar -->
+    <div class="sidebar">
+
+        <!-- Menu -->
+        <ul>
+            <li>
+                <a onclick="cambiarSeccion(this)" >Productos</a>
+            </li>
+            <li>
+                <a onclick="cambiarSeccion(this)" >Carrito</a>
+            </li>
+        </ul>
+
+    </div>
+    <!-- Fin sidebar -->
+
+    <!-- Empieza el hero -->
+    <div class="hero">
+        <div class="container">
+            <h1>
+                Colección de <br>
+                <span>STAR WARS</span>
+            </h1>
+        </div>
+    </div>
+    <!-- Termina el hero -->
+
+    
+    <!-- Empieza el contenido principal -->
+    <div class="contenidoPrincipal">
+        <div class="container">
+
+            <!-- Todos los productos -->
+            <div class="sectionChange active">
+                <h2>
+                    Lista de artículos
+                </h2>
+                <div class="itemsCont" id="targetBlock" >
+
+
+                </div>
+            </div>
+            <!-- Fin todos los productos -->
+
+            <!-- Carrito de compras -->
+
+            <div class="sectionChange" >
+                <h2>
+                    Carrito
+                </h2>                
+                <div id="carritoBlock">
+                    <div id="targetProds">
+
+                    </div>
+                    
+                    <h6 id="totalBlock">
+                        0
+                    </h6>
+                </div>
+            </div>
+
+            <!-- Fin carrito de compras -->
+
+
+        </div>
+    </div>
+    <!-- Termina el contenido principal -->
+
+    <!-- Empieza el footer -->
+
+    <footer>
+        <div class="container">
+            <h6>
+                © 2021 Colección de Star Wars <span>|</span> Carlos Martínez
+            </h6>
+        </div>
+    </footer>
+
+    <!-- Termina el footer -->
+
+
+    <!-- Importar app.js -->
+    <script src="js/app.js"></script>
+  </body>
+</html>

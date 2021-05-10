@@ -1,0 +1,423 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Light.woff2") format("woff2"), url("../fonts/Montserrat-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Bold.woff2") format("woff2"), url("../fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat-Medium.woff2") format("woff2"), url("../fonts/Montserrat-Medium.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat";
+}
+
+body {
+  font-size: 100%;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+
+::after,
+::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.container {
+  width: 95%;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+.container::before, .container::after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+header {
+  position: absolute;
+  width: 100%;
+  z-index: 98;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+}
+header.cuandobaja {
+  background-color: #0097A7;
+  position: fixed;
+}
+header .container {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+header .container a.btnMenu {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  margin-right: 20px;
+}
+header .container a.btnMenu span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  background-color: white;
+}
+header .container a.btnMenu span:nth-child(2) {
+  margin: 5px 0;
+}
+header .container h3 {
+  color: white;
+}
+
+footer {
+  padding: 50px 0;
+  background-color: #263238;
+}
+footer .container h6 {
+  text-align: center;
+  color: white;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin: 0;
+}
+footer .container h6 span {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-position: center 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
+.hero .container {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+}
+.hero .container h1 {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+}
+.hero .container h1 span {
+  font-size: 5rem;
+}
+
+.sidebar {
+  position: fixed;
+  width: 30%;
+  background-color: #333;
+  min-height: 100vh;
+  left: -30%;
+  transition: left 0.1s linear;
+}
+.sidebar.active {
+  z-index: 99;
+  left: 0;
+}
+.sidebar ul {
+  list-style: none;
+  width: 100%;
+}
+.sidebar ul li a {
+  display: block;
+  padding: 15px 45px 15px 15px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: right;
+  font-size: 1.15em;
+  border-bottom: 1px solid #505050;
+}
+.sidebar ul li a:hover {
+  background-color: #505050;
+}
+
+.contenidoPrincipal {
+  padding: 30px 0;
+}
+.contenidoPrincipal h2 {
+  margin: 0 auto 50px;
+  text-align: center;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  background-color: black;
+  display: table;
+  padding: 10px 30px;
+  color: white;
+}
+.contenidoPrincipal .sectionChange {
+  display: none;
+}
+.contenidoPrincipal .sectionChange.active {
+  display: block;
+}
+.contenidoPrincipal .itemsCont {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 990px;
+  margin: 0 auto;
+}
+.contenidoPrincipal .itemsCont .item {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 60px;
+  padding: 30px 15px;
+  border-radius: 6px;
+  border: 1px solid #cdcdcd;
+}
+.contenidoPrincipal .itemsCont .item img {
+  display: block;
+  max-height: 250px;
+  margin: 0 auto;
+  border-radius: 3px;
+}
+.contenidoPrincipal .itemsCont .item h3 {
+  margin: 15px 0;
+  text-align: left;
+  line-height: 1.5;
+  font-weight: normal;
+}
+.contenidoPrincipal .itemsCont .item h4 {
+  display: inline-block;
+  position: relative;
+  padding: 10px;
+  background-color: #757575;
+  color: white;
+  border-radius: 3px;
+  font-weight: normal;
+}
+.contenidoPrincipal .itemsCont .item h4::before {
+  content: "$  ";
+}
+.contenidoPrincipal .itemsCont .item h4::after {
+  content: "  MXN";
+}
+.contenidoPrincipal .itemsCont .item a.agregar {
+  display: inline-block;
+  margin-right: auto;
+  float: right;
+  padding: 10px;
+  background-color: #43a047;
+  border-radius: 3px;
+  color: white;
+  font-size: 0.9em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.contenidoPrincipal #carritoBlock #targetProds .producto {
+  border-bottom: 1px solid #bfbfbf;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0;
+}
+.contenidoPrincipal #carritoBlock #targetProds .producto p {
+  font-weight: bold;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+}
+.contenidoPrincipal #carritoBlock #targetProds .producto img {
+  max-width: 150px;
+  display: block;
+  margin: 0 0 0 0;
+}
+.contenidoPrincipal #carritoBlock #targetProds .producto a.eliminar {
+  margin-left: auto;
+  border-bottom: 2px solid #c62828;
+  color: #c62828;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 0.8em;
+}
+.contenidoPrincipal #carritoBlock #targetProds .producto a.eliminar::before {
+  content: "X  ";
+}
+.contenidoPrincipal #carritoBlock #totalBlock {
+  font-size: 1.5em;
+  position: relative;
+  padding: 15px;
+  margin-left: auto;
+  display: table;
+  margin: 50px 0 0 auto;
+}
+.contenidoPrincipal #carritoBlock #totalBlock::before {
+  content: "Total: $ ";
+}
+.contenidoPrincipal #carritoBlock #totalBlock::after {
+  content: " MXN";
+}
+
+@media (min-width: 768px) and (max-width: 978px) {
+  .sidebar {
+    width: 45%;
+    left: -45%;
+  }
+
+  .contenidoPrincipal .itemsCont {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 767px) {
+  footer .container h6 {
+    letter-spacing: 1px;
+  }
+  footer .container h6 span {
+    margin: 0 10px;
+  }
+
+  .hero .container {
+    height: 350px;
+  }
+  .hero .container h1 span {
+    font-size: 3.5rem;
+  }
+
+  .sidebar {
+    width: 45%;
+    left: -45%;
+  }
+
+  .contenidoPrincipal h2 {
+    font-size: 1.3em;
+  }
+  .contenidoPrincipal .itemsCont {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+  }
+  .contenidoPrincipal .itemsCont .item {
+    padding: 20px 10px;
+    margin: 0 auto 0;
+  }
+  .contenidoPrincipal .itemsCont .item h3 {
+    font-size: 1em;
+    text-align: center;
+    margin: 25px 0;
+    font-weight: 300;
+  }
+  .contenidoPrincipal .itemsCont .item h4 {
+    font-weight: bold;
+    font-size: 0.8em;
+  }
+  .contenidoPrincipal .itemsCont .item a.agregar {
+    font-size: 0.7em;
+  }
+  .contenidoPrincipal #carritoBlock #targetProds .producto {
+    display: block;
+  }
+  .contenidoPrincipal #carritoBlock #targetProds .producto a.eliminar {
+    display: table;
+    margin: 15px 0 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    padding: 25px 0;
+  }
+  footer .container h6 {
+    letter-spacing: 0;
+  }
+  footer .container h6 span {
+    display: block;
+    font-size: 0;
+    margin: 10px 0 0;
+  }
+
+  .sidebar {
+    width: 80%;
+    left: -80%;
+  }
+  .sidebar ul li a {
+    padding: 15px 25px 15px 15px;
+    font-size: 0.9em;
+  }
+
+  .hero {
+    background-position: 25% center;
+  }
+  .hero .container {
+    height: 300px;
+    padding-top: 30px;
+  }
+  .hero .container h1 {
+    font-size: 1.7em;
+  }
+  .hero .container h1 span {
+    font-size: 2.7rem;
+  }
+
+  .contenidoPrincipal h2 {
+    font-size: 1.15em;
+    letter-spacing: 0;
+  }
+  .contenidoPrincipal .itemsCont {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+  .contenidoPrincipal .itemsCont .item {
+    margin: 0 auto;
+  }
+  .contenidoPrincipal #carritoBlock #targetProds .producto p {
+    font-size: 1em;
+    letter-spacing: 0;
+  }
+}
+
+/*# sourceMappingURL=mainstyle.css.map */

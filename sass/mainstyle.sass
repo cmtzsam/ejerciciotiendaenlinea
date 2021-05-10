@@ -1,0 +1,379 @@
+@import 'snippets/fonts'
+
+*
+    margin: 0
+    padding: 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    font-family: 'Montserrat'
+
+body
+    font-size: 100%
+    &.no-scroll
+        overflow: hidden
+
+::after,
+::before
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+p
+    font-size: 1em
+    line-height: 1.5    
+
+a
+    text-decoration: none
+    cursor: pointer
+
+.container
+    width: 95%
+    max-width: 1220px
+    margin: 0 auto
+    &::before,
+    &::after
+        display: table
+        content: ""
+        clear: both        
+
+
+// Estilos para el header
+header
+    position: absolute
+    width: 100%
+    z-index: 98
+    background-color: transparent    
+    top: 0
+    left: 0
+    &.cuandobaja
+        background-color: #0097A7
+        position: fixed
+    .container
+        height: 70px
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        a.btnMenu
+            width: 20px
+            height: 20px
+            display: flex
+            justify-content: center
+            flex-flow: column
+            margin-right: 20px
+            span
+                display: block
+                width: 100%
+                height: 2px
+                border-radius: 2px
+                background-color: white
+                &:nth-child(2)
+                    margin: 5px 0
+        h3
+            color: white
+
+// Estilos para el pie de pagina
+footer
+    padding: 50px 0
+    background-color: #263238
+    .container
+        h6
+            text-align: center
+            color: white
+            font-size: .9em
+            letter-spacing: 2px
+            font-weight: 400
+            margin: 0
+            span
+                display: inline-block
+                margin: 0 15px
+
+
+
+// Empiezan los estilos para el hero
+.hero
+    background-image: url('../images/hero.jpg')
+    background-position: center 50%
+    background-size: cover
+    background-attachment: fixed
+    position: relative
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background-color: rgba( 0,0,0,.65 )
+        z-index: 1
+    .container
+        height: 400px
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 2
+        position: relative
+        h1
+            color: white
+            text-align: center
+            text-transform: uppercase
+            span
+                font-size: 5rem
+
+
+// Estilos para el sidebar
+.sidebar
+    position: fixed
+    width: 30%
+    background-color: #333
+    min-height: 100vh
+    left: -30%
+    transition: left .1s linear
+    &.active
+        z-index: 99
+        left: 0
+    ul
+        list-style: none
+        width: 100%
+        li
+            a
+                display: block
+                padding: 15px 45px 15px 15px
+                color: white
+                text-transform: uppercase
+                font-weight: bold
+                text-align: right
+                font-size: 1.15em
+                border-bottom: 1px solid #505050
+                &:hover
+                    background-color: #505050
+
+
+
+
+// Estilos para el contenido principal
+.contenidoPrincipal
+    padding: 30px 0
+    h2
+        margin: 0 auto 50px
+        text-align: center
+        letter-spacing: 6px
+        text-transform: uppercase
+        font-size: 1.5em
+        background-color: black
+        display: table
+        padding: 10px 30px
+        color: white
+
+    // Estilos para mostrar/ocultar la seccion
+    .sectionChange
+        display: none
+        &.active
+            display: block
+    
+    // Estilos para mostrar los productos
+    .itemsCont
+        display: grid
+        grid-template-columns: 1fr 1fr 1fr
+        max-width: 990px
+        margin: 0 auto
+        .item
+            width: 100%
+            max-width: 280px
+            margin: 0 auto 60px
+            padding: 30px 15px
+            border-radius: 6px
+            border: 1px solid #cdcdcd
+            img
+                display: block
+                max-height: 250px
+                margin: 0 auto
+                border-radius: 3px
+            h3
+                margin: 15px 0
+                text-align: left
+                line-height: 1.5
+                font-weight: normal
+            h4
+                display: inline-block
+                position: relative
+                padding: 10px
+                background-color: #757575
+                color: white
+                border-radius: 3px
+                font-weight: normal
+                &::before
+                    content: '$  '
+                &::after
+                    content: '  MXN'
+            a.agregar
+                display: inline-block
+                margin-right: auto
+                float: right
+                padding: 10px
+                background-color: #43a047
+                border-radius: 3px
+                color: white
+                font-size: .9em
+                font-weight: bold
+                text-transform: uppercase
+                letter-spacing: 2px
+
+    // Estilos para la seccion del carrito
+    #carritoBlock
+        #targetProds
+            .producto
+                border-bottom: 1px solid #bfbfbf
+                display: flex
+                align-items: center
+                justify-content: flex-start
+                padding: 20px 0
+                p
+                    font-weight: bold
+                    font-size: 1.3em
+                    letter-spacing: 1px                    
+                img
+                    max-width: 150px
+                    display: block
+                    margin: 0 0 0 0
+                a.eliminar
+                    margin-left: auto
+                    border-bottom: 2px solid #c62828
+                    color: #c62828
+                    text-transform: uppercase
+                    font-weight: bold
+                    letter-spacing: 3px
+                    font-size: 0.8em
+                    &::before
+                        content: 'X  '
+        // Caja de total
+        #totalBlock
+            font-size: 1.5em
+            position: relative
+            padding: 15px
+            margin-left: auto
+            display: table
+            margin: 50px 0 0 auto            
+            &::before
+                content: 'Total: $ '
+            &::after
+                content: ' MXN'
+
+
+// Empiezan la parte responsive
+
+
+// Medium devices
+@media (min-width: 768px) and (max-width: 978px)    
+    
+    .sidebar
+        width: 45%
+        left: -45%
+
+    .contenidoPrincipal 
+        .itemsCont
+            grid-template-columns: 1fr 1fr
+
+
+// Small devices
+@media (max-width: 767px)
+
+
+    footer 
+        .container 
+            h6
+                letter-spacing: 1px
+                span
+                    margin: 0 10px
+
+    .hero 
+        .container 
+            height: 350px
+            h1 
+                span
+                    font-size: 3.5rem
+
+    .sidebar
+        width: 45%
+        left: -45%
+
+    .contenidoPrincipal 
+        h2
+            font-size: 1.3em
+        .itemsCont
+            grid-template-columns: 1fr 1fr
+            grid-gap: 20px
+            .item
+                padding: 20px 10px
+                margin: 0 auto 0
+                h3
+                    font-size: 1em
+                    text-align: center
+                    margin: 25px 0 
+                    font-weight: 300
+                h4
+                    font-weight: bold
+                    font-size: .8em
+                a.agregar
+                    font-size: .7em
+        #carritoBlock 
+            #targetProds 
+                .producto 
+                    display: block
+                    a.eliminar
+                        display: table
+                        margin: 15px 0 0 auto
+
+
+// Xsmall devices
+@media (max-width: 480px)
+
+    footer
+        padding: 25px 0
+        .container
+            h6
+                letter-spacing: 0
+                span
+                    display: block
+                    font-size: 0
+                    margin: 10px 0 0                    
+
+    .sidebar
+        width: 80%
+        left: -80%
+        ul
+            li
+                a
+                    padding: 15px 25px 15px 15px
+                    font-size: .9em
+
+    .hero 
+        background-position: 25% center
+        .container
+            height: 300px
+            padding-top: 30px 
+            h1    
+                font-size: 1.7em
+                span
+                    font-size: 2.7rem
+
+    .contenidoPrincipal 
+        h2
+            font-size: 1.15em
+            letter-spacing: 0
+        .itemsCont
+            grid-template-columns: 1fr
+            grid-gap: 20px
+            .item
+                margin: 0 auto
+        #carritoBlock 
+            #targetProds 
+                .producto 
+                    p
+                        font-size: 1em
+                        letter-spacing: 0
+            
+
